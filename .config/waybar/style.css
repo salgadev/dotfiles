@@ -119,7 +119,7 @@ window#waybar {
 	  padding: 5px 10px 5px 10px;
 }
 
-#pulseaudio, #bluetooth, #network, #clock {
+#pulseaudio, #bluetooth, #network, #clock, #cava {
 	margin: 5px 5px 5px 5px;
 	padding: 4px 1px;
 	color: @text;
