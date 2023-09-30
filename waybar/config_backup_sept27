@@ -1,0 +1,92 @@
+{
+  "layer": "top",
+    "modules-left": ["custom/nix", "cpu", "memory", "temperature"],
+    "modules-center": ["hyprland/workspaces", "hyprland/window" ,"hyprland/mode", "hyprland/scratchpad"],
+    "modules-right": ["pulseaudio", "bluetooth", "network", "clock"],
+    "custom/nix": {     
+      "format": "  ",
+      "tooltip": false,  
+      "on-click": "wofi --xoffset 10"
+    },
+    "hyprland/workspaces": {
+         "on-click": "activate",
+         "disable-scroll": true,
+         "all-outputs": true,
+         "warp-on-scroll": false,
+         "format": "{name}: {icon}",
+         "format-icons": {
+             "1": "",
+             "2": "",
+             "3": "",
+             "4": "",
+             "5": "",
+             "urgent": "",
+             "focused": "",
+             "default": ""
+         }
+     },
+	"hyprland/window": {
+        "max-length": 50,
+        "separate-outputs": true
+    },
+    "hyprland/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "hyprland/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    
+    "pulseaudio": {
+      "format": "<span color='#b4befe'>{icon}</span> {volume}%",
+      "format-muted": "",
+      "tooltip": false,
+      "format-icons": {
+        "headphone": "",
+        "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
+      },
+      "scroll-step": 1,
+      "on-click": "pavucontrol"
+
+    },
+    "bluetooth": {
+      "format": "<span color='#b4befe'></span> {status}",
+      "format-disabled": "", // an empty format will hide the module
+      "format-connected": "<span color='#b4befe'></span> {num_connections}",
+      "tooltip-format": "{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}   {device_address}",
+	  "on-click": "blueberry"
+    },
+    "network": {
+      //"interface": "wlo1",
+      "format": "{ifname}",
+      //"format-wifi": "<span color='#b4befe'> </span>{essid}",
+	  "format-wifi": "<span color='#b4befe'> </span>",
+      "format-ethernet": "{ipaddr}/{cidr} ",
+      "format-disconnected": "<span color='#b4befe'>󰖪 </span>No Network",
+      "tooltip": false,
+    },
+}
