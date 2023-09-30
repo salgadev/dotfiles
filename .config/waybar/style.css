@@ -1,0 +1,130 @@
+@import "mocha.css";
+
+
+* {
+  border: none;
+  font-family: 'Fira Code', 'Symbols Nerd Font Mono';
+  font-size: 16px;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+  min-height: 45px;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#custom-nix {
+  background-color: @surface2;
+  border-radius: 10px;
+  /*color: #b4befe;*/
+  margin: 5px 5px 5px 5px;
+  padding: 5px 10px 5px 10px;
+  opacity: 0.8;
+}
+
+#workspaces, #taskbar {
+    /*margin: 10px 5px 10px 5px;*/
+    background-color: @surface0;
+    margin: 5px 5px 5px 5px;
+    padding: 4px 1px;
+
+    border-radius: 10px;
+    font-weight: normal;
+    font-style: normal;
+    opacity:0.8;
+}
+
+#workspaces button {
+	 color: @subtext0;
+    padding: 0px 10px;
+    margin: 0px 3px;
+    border-radius: 12px;
+
+    transition: all 0.3s ease-in-out;
+    opacity:0.4;
+    font-size:13px;
+}
+
+#workspaces button.active {    
+    background-color: @overlay0;
+    color: @text;
+    border-radius: 10px;
+    min-width: 30px;
+    background-size: 400% 400%;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
+#workspaces button:hover {      
+    background-color: @peach;    
+    color: @sky; 
+    border-radius: 10px;
+    min-width: 30px;
+    background-size: 400% 400%;
+    opacity:1;
+}
+
+#taskbar button {	 
+    padding: 0px 10px;
+    margin: 0px 3px;
+    border-radius: 12px;
+
+    color: @overlay0;
+    transition: all 0.3s ease-in-out;
+    opacity:0.4;    
+}
+
+#taskbar button.active {
+	 background-color: @overlay0;
+    border-radius: 10px;
+    min-width: 30px;
+    background-size: 200% 200%;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
+#taskbar button:hover {
+    background-color: @peach;    
+    color: @sky; 
+    border-radius: 10px;
+    min-width: 30px;
+    background-size: 400% 400%;
+    opacity:1;
+ } 
+
+#temperature, #cpu, #disk, #memory{
+    /*
+     top|left|bottom|right
+    */
+    margin: 5px 5px 5px 5px;
+    padding: 4px 1px;
+    color: @text;
+
+    border-radius: 10px;
+    font-weight: normal;
+    font-style: normal;     
+    opacity:0.8;
+}
+
+#temperature {	
+   margin-left:10px;
+}
+
+#memory {
+    margin-right:10px;
+}
+
+#clock {
+	  margin: 5px 5px 5px 5px;
+	  padding: 5px 10px 5px 10px;
+}
+
+#pulseaudio, #bluetooth, #network, #clock {
+	margin: 5px 5px 5px 5px;
+	padding: 4px 1px;
+	color: @text;
+	border-radius: 10px;
+	font-weight: normal;
+	font-style: normal;
+	opacity:0.8;
+}
