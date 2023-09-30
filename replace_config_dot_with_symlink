@@ -1,0 +1,1 @@
+FOLDER=swaylock && rm -r ~/.config/swaylock && ln -s ~/dotfiles/.config/swaylock ~/.config/swaylock
