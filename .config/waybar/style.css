@@ -11,10 +11,21 @@
 
 window#waybar {
     background: transparent;
+    color: @blue;
+}
+
+tooltip {
+     background-color: @crust;
+     border: 1px solid @sky;
+}
+
+tooltip label {
+  color: @text;
 }
 
 #workspaces, #taskbar, #custom-nix, #custom-power {
     /*margin: 10px 5px 10px 5px;*/
+    /* border: 1px solid @sky; */
     background-color: @surface0;
     margin: 5px 5px 5px 5px;
     padding: 4px 1px;
@@ -83,24 +94,6 @@ window#waybar {
     opacity:1;
 }
 
-#custom-nix:hover, #custom-power:hover {
-    background-color: @peach;
-    color: @sky;
-    border-radius: 10px;
-    min-width: 30px;
-    background-size: 400% 400%;
-    opacity:1;
-}
-
-#custom-nix:active, #custom-power:active {
-    background-color: @overlay0;
-    border-radius: 10px;
-    min-width: 30px;
-    background-size: 200% 200%;
-    transition: all 0.3s ease-in-out;
-    opacity:1.0;
-}
-
 #temperature, #cpu, #disk, #memory{
     /*
      top|left|bottom|right
@@ -128,7 +121,7 @@ window#waybar {
 	  padding: 5px 10px 5px 10px;
 }
 
-#pulseaudio, #bluetooth, #network, #clock, #cava {
+#pulseaudio, #bluetooth, #network, #clock, #custom-media {
 	margin: 5px 5px 5px 5px;
 	padding: 4px 1px;
 	color: @text;
@@ -136,4 +129,8 @@ window#waybar {
 	font-weight: normal;
 	font-style: normal;
 	opacity:0.8;
+}
+
+#custom-media {
+    color: @sky;
 }
