@@ -1,7 +1,7 @@
 {
   "layer": "top",
-    "modules-left": ["custom/nix", "group/hardware", "wlr/taskbar", "hyprland/window"],
-    "modules-center": ["hyprland/workspaces"],
+    "modules-left": ["custom/nix", "group/hardware", "wlr/taskbar"],
+    "modules-center": ["hyprland/workspaces", "hyprland/window"],
     "modules-right": ["custom/media", "group/connections", "clock", "custom/power"],
 
     "custom/power": {
@@ -43,8 +43,8 @@
         "active-only": false,
         "all-outputs": true,
         "format": "{name}",
-        "persistent-workspaces": {
-          "*": 5, // 5 workspaces by default on every monitor
+        "persistent_workspaces": {
+             "*": 5
         }
     },
 
@@ -54,13 +54,13 @@
     },
 
     "custom/media": {
-        "format": "{icon}{}",
+        "format": "󰝚 {} 󰝚",
         "return-type": "json",
         "format-icons": {
         "Playing": " ",
         "Paused": " ",
         },
-        "max-length":50,
+        "max-length":70,
         "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
         "on-click": "playerctl play-pause",
     },
