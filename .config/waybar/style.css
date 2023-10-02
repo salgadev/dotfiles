@@ -13,16 +13,17 @@ window#waybar {
     background: transparent;
 }
 
+/*
 #custom-nix {
   background-color: @surface2;
   border-radius: 10px;
-  /*color: #b4befe;*/
   margin: 5px 5px 5px 5px;
   padding: 5px 10px 5px 10px;
   opacity: 0.8;
 }
+*/
 
-#workspaces, #taskbar {
+#workspaces, #taskbar, #custom-nix, #custom-power {
     /*margin: 10px 5px 10px 5px;*/
     background-color: @surface0;
     margin: 5px 5px 5px 5px;
@@ -35,7 +36,7 @@ window#waybar {
 }
 
 #workspaces button {
-	 color: @subtext0;
+    color: @subtext0;
     padding: 0px 10px;
     margin: 0px 3px;
     border-radius: 12px;
@@ -75,7 +76,7 @@ window#waybar {
 }
 
 #taskbar button.active {
-	 background-color: @overlay0;
+	background-color: @overlay0;
     border-radius: 10px;
     min-width: 30px;
     background-size: 200% 200%;
@@ -90,7 +91,25 @@ window#waybar {
     min-width: 30px;
     background-size: 400% 400%;
     opacity:1;
- } 
+}
+
+#custom-nix:hover, #custom-power:hover {
+    background-color: @peach;
+    color: @sky;
+    border-radius: 10px;
+    min-width: 30px;
+    background-size: 400% 400%;
+    opacity:1;
+}
+
+#custom-nix:active, #custom-power:active {
+    background-color: @overlay0;
+    border-radius: 10px;
+    min-width: 30px;
+    background-size: 200% 200%;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
 
 #temperature, #cpu, #disk, #memory{
     /*
