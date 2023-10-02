@@ -1,14 +1,21 @@
 {
   "layer": "top",
     "modules-left": ["custom/nix", "group/hardware", "wlr/taskbar"],
-    "modules-center": ["hyprland/workspaces", "hyprland/window" ],
-    "modules-right": ["cava","group/connections", "clock"],
+    "modules-center": ["hyprland/workspaces", "hyprland/window"],
+    "modules-right": ["cava","group/connections", "clock", "custom/power"],
+
+    "custom/power": {
+      "format": " ⏻ ",
+      "tooltip": false,
+      "on-click": "wlogout",
+      "on-click-right": "swaylock"
+    },
 
     "custom/nix": {     
       "format": "  ",
-      "tooltip": false,  
-      "on-click": "wlogout"
-      // "on-click": "wofi --xoffset 10"*
+      "tooltip": false,
+      "on-click": "rofi -show drun -show-icons",
+      "on-click-right": "nwg-drawer"
     },
 
     // Group Hardware
