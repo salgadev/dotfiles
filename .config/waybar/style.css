@@ -23,7 +23,7 @@ tooltip label {
   color: @text;
 }
 
-#workspaces, #taskbar, #custom-nix, #custom-power {
+#workspaces, #taskbar, #custom-nix, #custom-power, #tray, #pulseaudio {
     /*margin: 10px 5px 10px 5px;*/
     /* border: 1px solid @sky; */
     background-color: @surface0;
@@ -34,6 +34,26 @@ tooltip label {
     font-weight: normal;
     font-style: normal;
     opacity:0.8;
+}
+
+#custom-power{
+    margin: 3px 0px 3px 1px;
+    padding: 5px 5px;
+}
+
+#custom-nix{
+    margin: 3px 0px 3px 0px;
+    padding: 5px 5px;
+}
+
+#pulseaudio {
+    margin: 3px 0px 3px 0px;
+    padding: 5px;
+}
+
+#tray, #pulseaudio {
+    background-color: transparent;
+    color: @text;
 }
 
 #workspaces button {
@@ -95,9 +115,7 @@ tooltip label {
 }
 
 #temperature, #cpu, #disk, #memory{
-    /*
-     top|left|bottom|right
-    */
+    /*top|left|bottom|right*/
     margin: 5px 5px 5px 5px;
     padding: 4px 1px;
     color: @text;
@@ -116,12 +134,7 @@ tooltip label {
     margin-right:10px;
 }
 
-#clock {
-	  margin: 5px 5px 5px 5px;
-	  padding: 5px 10px 5px 10px;
-}
-
-#pulseaudio, #bluetooth, #network, #clock, #custom-media {
+#clock, #custom-media {
 	margin: 5px 5px 5px 5px;
 	padding: 4px 1px;
 	color: @text;
@@ -133,4 +146,13 @@ tooltip label {
 
 #custom-media {
     color: @sky;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
 }
