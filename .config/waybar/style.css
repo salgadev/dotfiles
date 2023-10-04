@@ -24,8 +24,7 @@ tooltip label {
 }
 
 #workspaces, #taskbar, #custom-nix, #custom-power, #tray, #pulseaudio {
-    /*margin: 10px 5px 10px 5px;*/
-    /* border: 1px solid @sky; */
+    border-top: 1px solid @rosewater;
     background-color: @surface0;
     margin: 5px 5px 5px 5px;
     padding: 4px 1px;
@@ -37,13 +36,16 @@ tooltip label {
 }
 
 #custom-power{
-    margin: 3px 0px 3px 1px;
-    padding: 5px 5px;
+    border-left: 1px solid @rosewater;
+    padding-left: 10px;
+    margin-right: 0px;
+    border-radius: 10px 0px 0px 10px;
 }
 
 #custom-nix{
-    margin: 3px 0px 3px 0px;
-    padding: 5px 5px;
+    padding-right: 10px;
+    margin-left: 0px;
+    border-radius: 0px 10px 10px 0px;
 }
 
 #pulseaudio {
@@ -52,6 +54,7 @@ tooltip label {
 }
 
 #tray, #pulseaudio {
+    border-top: transparent;
     background-color: transparent;
     color: @text;
 }
@@ -142,6 +145,12 @@ tooltip label {
 	font-weight: normal;
 	font-style: normal;
 	opacity:0.8;
+}
+
+#clock {
+    border: 1px solid @rosewater;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #custom-media {
