@@ -48,12 +48,12 @@ tooltip label {
     border-radius: 0px 10px 10px 0px;
 }
 
-#pulseaudio {
+#pulseaudio, #custom-cliphist {
     margin: 3px 0px 3px 0px;
     padding: 5px;
 }
 
-#tray, #pulseaudio {
+#tray, #pulseaudio, #custom-cliphist {
     border-top: transparent;
     background-color: transparent;
     color: @text;
