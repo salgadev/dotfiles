@@ -1,28 +1,31 @@
 {
+  "height": 30,
   "layer": "top",
-    "modules-left": ["custom/power", "custom/nix", "group/hardware", "wlr/taskbar", "hyprland/window"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["custom/media", "pulseaudio", "custom/cliphist", "tray", "clock"],
+  "margin-top": 6,
+  "margin-left": 10,
+  "margin-bottom": 0,
+  "margin-right": 10,
+  "spacing": 5, // Gaps between modules (4px)
+  "modules-left": ["custom/nix", "group/hardware", "wlr/taskbar", "hyprland/window"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["custom/media", "pulseaudio", "custom/screenshot", "custom/cliphist", "tray", "clock", "custom/power"],
 
     "tray": {
-        "icon-size": 18,
         "spacing": 10
     },
 
     "custom/power": {
+      "format": " <span>⏻ </span>",
       "return-type": "json",
-      "icon-size": 18,
-      "format": " ⏻ ",
       "exec": "echo '{\"tooltip\": \"Power Menu\"}'",
       "on-click": "wlogout",
       "on-click-right": "swaylock"
     },
 
     "custom/nix": {
+      "format": " <span> </span>",
       "return-type": "json",
-      "icon-size": 18,
       "exec": "echo '{\"tooltip\": \"Applications\"}'",
-      "format": "  ",
       "on-click": "rofi -show drun -show-icons",
       "on-click-right": "nwg-drawer"
     },
@@ -40,11 +43,14 @@
 
     // Taskbar
     "wlr/taskbar": {
+        "icon-size": 19,
         "format": "{icon}",
-        "icon-size": 18,
         "tooltip-format": "{title}",
         "on-click": "activate",
-        "on-click-middle": "close"
+        "on-click-middle": "close",
+        "format-icons": {
+          "urgent": ""
+        }
     },
 
     "hyprland/workspaces" : {
@@ -59,20 +65,30 @@
 
 	"hyprland/window": {
         "max-length": 50,
-        "separate-outputs": true
+        "separate-outputs": true,
+        "rewrite": {
+          "(.*) - Chromium": "$1"
+        }
     },
 
     "custom/cliphist": {
         "return-type": "json",
         "format": "",
-        "exec": "echo '{\"tooltip\": \"Clipboard Copy | Wipe | Delete \"}'",
+        "exec": "echo '{\"tooltip\": \"Clipboard 🖱 Copy | Wipe | Delete \"}'",
         "on-click": "sleep 0.1 && cliphist list | rofi -dmenu -config ~/.config/rofi/catppuccin-mocha.rasi | cliphist decode | wl-copy",
         "on-click-right": "sleep 0.1 && cliphist list | rofi -dmenu -config ~/.config/rofi/catppuccin-mocha.rasi | cliphist delete",
         "on-click-middle": "sleep 0.1 && cliphist list | rofi -dmenu -config ~/.config/rofi/catppuccin-mocha.rasi | cliphist wipe",
     },
 
+    "custom/screenshot": {
+        "return-type": "json",
+        "format": "",
+        "exec": "echo '{\"tooltip\": \"Screenshot Current Monitor | N/A | Area and Copy \"}'",
+        "on-click": "grim -o $(hyprctl monitors -j |jq -r '.[] | select(.focused) | .name') ~/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png",
+    },
+
+
     "custom/media": {
-        "icon-size": 18,
         "format": "{icon}{}",
         "return-type": "json",
         "format-icons": {
@@ -112,31 +128,26 @@
     },
 
     "temperature": {
-        "icon-size": 18,
         "critical-threshold": 80,
             "format": "{icon} {temperatureC}°C",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", "", "", ""]
     },
 
     "cpu": {
-        "icon-size": 18,
         "format": " {usage}%",
     },
 
     "disk": {
-        "icon-size": 18,
         "interval": 30,
         "format": " {percentage_used}%",
         "path": "/"
     },
 
     "memory": {
-        "icon-size": 18,
         "format": " {}%"
     },
     
     "pulseaudio": {
-      "icon-size": 18,
       "format": "{icon} {format_source}",
       "format-muted": "🔇 {format_source}",
       "tooltip-format": "{volume}%",
