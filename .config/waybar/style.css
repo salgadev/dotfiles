@@ -1,18 +1,25 @@
 @import "mocha.css";
 
-
 * {
-  border: none;
-  font-family: 'Fira Code', 'Symbols Nerd Font Mono';
-  font-size: 16px;
-  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-  min-height: 45px;
+  font-family: 'JetBrainsMono Nerd Font', 'Symbols Nerd Font Mono';
+  font-size: 17px;
 }
 
 window#waybar {
-    background: transparent;
+    background: alpha(@base, 0.8);
     color: @blue;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    border-top: 8px transparent;
+    border-radius: 8px;
+    transition-duration: 0.5s;
+    margin: 16px 16px;
 }
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
 
 tooltip {
      background-color: @crust;
@@ -23,54 +30,38 @@ tooltip label {
   color: @text;
 }
 
-#workspaces, #taskbar, #custom-nix, #custom-power, #tray, #pulseaudio {
+#custom-screenshot,
+#workspaces,
+#taskbar,
+#pulseaudio,
+#tray,
+#custom-cliphist,
+#clock,
+#custom-power,
+#custom-nix {
     border-top: 1px solid @rosewater;
     background-color: @surface0;
-    margin: 5px 5px 5px 5px;
-    padding: 4px 1px;
 
-    border-radius: 10px;
-    font-weight: normal;
-    font-style: normal;
-    opacity:0.8;
+    padding: 0 10px;
+    border-radius: 9.5px;
 }
 
-#custom-power{
-    border-left: 1px solid @rosewater;
-    padding-left: 10px;
-    margin-right: 0px;
-    border-radius: 10px 0px 0px 10px;
-}
-
-#custom-nix{
-    padding-right: 10px;
-    margin-left: 0px;
-    border-radius: 0px 10px 10px 0px;
-}
-
-#pulseaudio, #custom-cliphist {
-    margin: 3px 0px 3px 0px;
-    padding: 5px;
-}
-
-#tray, #pulseaudio, #custom-cliphist {
-    border-top: transparent;
-    background-color: transparent;
-    color: @text;
+#workspaces, #taskbar {
+    padding: 4 1;
+    margin: 0 4px;
+    border-radius: 7.8px;
+    background-color: @surface0;
 }
 
 #workspaces button {
+    padding: 0px 5px;
     color: @subtext0;
-    padding: 0px 10px;
     margin: 0px 3px;
     border-radius: 12px;
-
     transition: all 0.3s ease-in-out;
-    opacity:0.4;
-    font-size:13px;
 }
 
-#workspaces button.active {    
+#workspaces button.active {
     background-color: @overlay0;
     color: @text;
     border-radius: 10px;
@@ -80,13 +71,47 @@ tooltip label {
     opacity:1.0;
 }
 
-#workspaces button:hover {      
-    background-color: @peach;    
-    color: @sky; 
+#workspaces button:hover {
+    background-color: @peach;
+    color: @sky;
     border-radius: 10px;
     min-width: 30px;
     background-size: 400% 400%;
     opacity:1;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#custom-power{
+    border-right: 1px solid @rosewater;
+    border-radius: 7.5px;
+    padding: 0 5px;
+}
+
+#custom-nix{
+    border-left: 1px solid @rosewater;
+    border-radius: 7.5px;
+    padding: 0 3px;
+}
+
+#custom-screenshot {
+    color: @subtext1;
+}
+
+#pulseaudio {
+    color: @red;
+}
+
+#custom-cliphist {
+    color: @peach;
 }
 
 #taskbar button {	 
@@ -129,15 +154,27 @@ tooltip label {
     opacity:0.8;
 }
 
+
 #temperature {	
-   margin-left:10px;
+    color: @mauve;
+    margin-left:10px;
+}
+
+#cpu {
+    color: @maroon;
+    margin-left:10px;
+}
+
+#disk{
+    color: @yellow;
 }
 
 #memory {
+    color: @teal;
     margin-right:10px;
 }
 
-#clock, #custom-media {
+#custom-media {
 	margin: 5px 5px 5px 5px;
 	padding: 4px 1px;
 	color: @text;
@@ -148,9 +185,10 @@ tooltip label {
 }
 
 #clock {
-    border: 1px solid @rosewater;
-    padding-left: 10px;
-    padding-right: 10px;
+    border-top: transparent;
+    background-color: transparent;
+    padding: 0 10px;
+    border-radius: 9.5px;
 }
 
 #custom-media {
