@@ -1,1 +1,1 @@
-FOLDER=swaylock && rm -r ~/.config/swaylock && ln -s ~/dotfiles/.config/swaylock ~/.config/swaylock
+FOLDER=hyprland-autoname-workspaces && rm -r ~/.config/hyprland-autoname-workspaces && ln -s ~/dotfiles/.config/hyprland-autoname-workspaces ~/.config/hyprland-autoname-workspaces
