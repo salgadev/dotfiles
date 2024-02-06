@@ -6,7 +6,7 @@
   "margin-bottom": 0,
   "margin-right": 10,
   "spacing": 5, // Gaps between modules (4px)
-  "modules-left": ["custom/nix", "group/hardware", "wlr/taskbar", "hyprland/window"],
+  "modules-left": ["custom/nix", "group/hardware", "hyprland/window"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": ["custom/media", "pulseaudio", "custom/screenshot", "custom/cliphist", "tray", "clock", "custom/power"],
 
@@ -54,13 +54,10 @@
     },
 
     "hyprland/workspaces" : {
-        "on-click": "activate",
-        "active-only": false,
-        "all-outputs": true,
         "format": "{name}",
-        "persistent-workspaces": {
-          "*": 5, // 5 workspaces by default on every monitor
-        }
+        //"format": "{}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+      	"on-scroll-down": "hyprctl dispatch workspace e-1",
     },
 
 	"hyprland/window": {
