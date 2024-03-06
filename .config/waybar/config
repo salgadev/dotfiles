@@ -55,7 +55,6 @@
 
     "hyprland/workspaces" : {
         "format": "{name}",
-        //"format": "{}",
         "on-scroll-up": "hyprctl dispatch workspace e+1",
       	"on-scroll-down": "hyprctl dispatch workspace e-1",
     },
@@ -72,9 +71,9 @@
         "return-type": "json",
         "format": "",
         "exec": "echo '{\"tooltip\": \"Clipboard 🖱 Copy | Wipe | Delete \"}'",
-        "on-click": "sleep 0.1 && cliphist list | rofi -dmenu -config ~/.config/rofi/catppuccin-mocha.rasi | cliphist decode | wl-copy",
-        "on-click-right": "sleep 0.1 && cliphist list | rofi -dmenu -config ~/.config/rofi/catppuccin-mocha.rasi | cliphist delete",
-        "on-click-middle": "sleep 0.1 && cliphist list | rofi -dmenu -config ~/.config/rofi/catppuccin-mocha.rasi | cliphist wipe",
+        "on-click": "cliphist list | rofi -dmenu -config ~/.config/rofi/catppuccin-mocha.rasi | cliphist decode | wl-copy",
+        "on-click-right": "cliphist list | rofi -dmenu -config ~/.config/rofi/catppuccin-mocha.rasi | cliphist delete",
+        "on-click-middle": "cliphist list | rofi -dmenu -config ~/.config/rofi/catppuccin-mocha.rasi | cliphist wipe",
     },
 
     "custom/screenshot": {
