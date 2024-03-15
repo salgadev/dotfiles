@@ -55,8 +55,8 @@
 
     "hyprland/workspaces" : {
         "format": "{name}",
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-      	"on-scroll-down": "hyprctl dispatch workspace e-1",
+        "on-scroll-up": "sleep 0.1 && hyprctl dispatch workspace e+1",
+      	"on-scroll-down": "sleep 0.1 && hyprctl dispatch workspace e-1",
     },
 
 	"hyprland/window": {

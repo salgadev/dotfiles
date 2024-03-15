@@ -32,13 +32,18 @@ DEFAULT="{icon}"
 "zsh" = "Zsh"
 
 [title_in_class."(brave-browser|firefox|chrom.*)"]
-"(?i)youtube" = "<span color='#f38ba8'> </span>"
+"(?i)youtube" = "<span color='#f38ba8'>ꟳ </span>"
 "(?i)twitch" = "ꟳ"
+"(?i)Hugging Face" = "<span color='#f9e2af'>:D </span>"
+"(?i)HuggingChat" = "<span color='#f9e2af'>:D </span>"
 
 [title_active."(brave-browser|firefox|chrom.*)"]
 "(?i)twitch" = "<span color='purple'>{icon}</span>"
 
 [title_in_class.""]
+"(?i)Spotify" = "<span color='#a6e3a1'> </span>"
+
+[initial_title_in_class.""]
 "(?i)Spotify" = "<span color='#a6e3a1'> </span>"
 
 # [title_in_initial_class."(?i)kitty"]
@@ -77,6 +82,7 @@ DEFAULT = ""
 "(?i)brave-browser" = "<span color='#f38ba8'> </span>"
 "(?i)kitty" = "<span color='#a6e3a1'> </span>"
 "(?i)kate" = "<span color='#a6e3a1'> </span>"
+"(?i)ImageRoll" = "<span color='#94e2d5'> </span>"
 #"(?i)kitty" = ""
 #"(?i)alacritty" = ""
 bleachbit = ""
