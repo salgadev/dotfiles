@@ -32,13 +32,13 @@ DEFAULT="{icon}"
 "zsh" = "Zsh"
 
 [title_in_class."(brave-browser|firefox|chrom.*)"]
-"(?i)youtube" = "<span color='#f38ba8'>ꟳ </span>"
-"(?i)twitch" = "ꟳ"
+"(?i)youtube" = "<span color='#f38ba8'> </span>"
+"(?i)Twitch" = "<span color='#cba6f7'> </span>"
 "(?i)Hugging Face" = "<span color='#f9e2af'>:D </span>"
 "(?i)HuggingChat" = "<span color='#f9e2af'>:D </span>"
 
 [title_active."(brave-browser|firefox|chrom.*)"]
-"(?i)twitch" = "<span color='purple'>{icon}</span>"
+# "(?i)Twitch" = "<span color='purple'>{icon}</span>"
 
 [title_in_class.""]
 "(?i)Spotify" = "<span color='#a6e3a1'> </span>"
@@ -93,6 +93,8 @@ rclone-browser = "<span color='#89dceb'> </span>"
 taskwarrior-tui = ""
 xfce4-taskmanager = "<span color='#f38ba8'> </span>"
 "(?i)apostrophe-wrapped" = "<span color='#f9e2af'> </span>"
+anytype = "<span color='#f9e2af'> </span>"
+Notesnook = "<span color='#f2cdcd'> </span>"
 
 #"(?i)kitty" = ""
 #"(?i)alacritty" = ""
